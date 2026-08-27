@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaptopKita - Laptop Murah</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            background: white;
+            padding: 55px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .products {
+            padding: 45px 8%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.08);
+        }
+
+        .laptop {
+            height: 170px;
+            background: #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .spec {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #dc2626;
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy {
+            width: 100%;
+            background: #16a34a;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .warning {
+            margin: 30px 8%;
+            padding: 15px;
+            background: #fff3cd;
+            border: 1px solid #ffe69c;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">💻 LaptopKita</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#produk">Produk</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Laptop Murah, Kualitas Mantap!</h1>
+
+        <p>
+            Temukan berbagai laptop dengan harga terjangkau
+            untuk kuliah, kerja, gaming, dan kebutuhan sehari-hari.
+        </p>
+
+        <button class="btn" onclick="lihatProduk()">
+            Lihat Produk
+        </button>
+    </div>
+
+    <div style="font-size: 130px;">
+        💻
+    </div>
+</section>
+
+<section class="products" id="produk">
+
+    <h2>🔥 Laptop Pilihan</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <div class="laptop">💻</div>
+
+            <h3>Laptop Student 14</h3>
+
+            <div class="spec">
+                Intel Core i3<br>
+                RAM 8 GB<br>
+                SSD 256 GB<br>
+                Layar 14 inch
+            </div>
+
+            <div class="price">
+                Rp4.299.000
+            </div>
+
+            <button class="buy" onclick="beli('Laptop Student 14')">
+                Beli Sekarang
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="laptop">💻</div>
+
+            <h3>Laptop Pro 15</h3>
+
+            <div class="spec">
+                Intel Core i5<br>
+                RAM 16 GB<br>
+                SSD 512 GB<br>
+                Layar 15.6 inch
+            </div>
+
+            <div class="price">
+                Rp7.499.000
+            </div>
+
+            <button class="buy" onclick="beli('Laptop Pro 15')">
+                Beli Sekarang
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="laptop">💻</div>
+
+            <h3>Gaming Laptop X</h3>
+
+            <div class="spec">
+                Ryzen 5<br>
+                RAM 16 GB<br>
+                SSD 512 GB<br>
+                Dedicated Graphics
+            </div>
+
+            <div class="price">
+                Rp9.999.000
+            </div>
+
+            <button class="buy" onclick="beli('Gaming Laptop X')">
+                Beli Sekarang
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<div class="warning">
+    ⚠️ <b>SIMULASI CYBERSECURITY</b><br>
+    Website ini dibuat khusus untuk demonstrasi/praktikum.
+    Jangan memasukkan data pribadi, password, atau informasi pembayaran asli.
+</div>
+
+<footer id="kontak">
+    <p>© 2026 LaptopKita — Security Awareness Lab</p>
+</footer>
+
+
+<script>
+
+function lihatProduk() {
+    document.getElementById("produk").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function beli(namaProduk) {
+    alert(
+        "SIMULASI PEMBELIAN\n\n" +
+        "Produk: " + namaProduk + "\n\n" +
+        "Ini hanya simulasi cybersecurity.\n" +
+        "Tidak ada transaksi atau data pengguna yang dikirim."
+    );
+}
+
+</script>
+
+</body>
+</html>
